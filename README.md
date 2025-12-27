@@ -1,50 +1,67 @@
-# Magic Trade Scanner para Android
+# MagicTradeScanner
 
-Aplicativo Android para facilitar a avaliação e gerenciamento de trocas de cartas Magic: The Gathering, utilizando reconhecimento óptico de caracteres (OCR) para identificar cartas e consultar preços automaticamente.
+MagicTradeScanner is an Android application designed to streamline the trading and valuation process for Magic: The Gathering players. By leveraging Optical Character Recognition (OCR), the app allows users to scan physical cards with their device camera to instantly retrieve current market prices from TCGPlayer, eliminating the need for manual data entry.
 
-## Objetivo
+## Key Features
 
-Permitir que jogadores digitalizem cartas de Magic usando a câmera do dispositivo, obtenham preços atualizados e organizem visualmente suas trocas, eliminando a necessidade de digitar manualmente o nome de cada carta.
+- **OCR Card Scanning**: Automatically identifies card names from the camera feed.
+- **Real-time Price Fetching**: Retrieves minimum, average, and maximum prices from TCGPlayer.
+- **Trade Management**: Visually organize cards into trade stacks with calculated totals.
+- **Data Efficiency**: Downloads price data via Wi-Fi to minimize mobile data usage.
+- **Player Utilities**:
+  - Life Counter for gameplay.
+  - Export collections to `.DEK` file format.
+  - Manage Pucatrade binders.
+  - Potential integration with TappedOut.
 
-## Funcionalidades
+## Getting Started
 
-- **Reconhecimento OCR** do nome da carta via câmera.
-- **Consulta automática** de preços (mínimo, médio e máximo) na TCGPlayer.
-- **Organização visual** das cartas em pilhas com valores para facilitar a visualização da troca.
-- **Download de preços via Wi-Fi** para evitar consumo excessivo de dados móveis.
-- **Ferramentas para jogadores**, incluindo:
-  - Contador de vida para partidas.
-  - Exportação de coleções para arquivos `.DEK`.
-  - Possível integração com TappedOut.
-- **Gerenciamento de Pucatrade**, para acompanhar seu binder de trocas.
+### Prerequisites
 
-## Como usar
+- Android Studio (latest version recommended).
+- Android SDK installed.
+- An Android device or emulator for testing.
 
-1. Abra o aplicativo no seu dispositivo Android.
-2. Utilize a câmera para escanear a carta desejada.
-3. Aguarde o reconhecimento e a consulta automática dos preços.
-4. Organize suas cartas em pilhas para facilitar a negociação.
-5. Utilize as ferramentas adicionais conforme necessário.
+### Installation & Building
 
-## Como compilar
+1. **Clone the Repository**: Since the previous Git history was removed, initialize a fresh repository.
+    bash
+    git init
+    git remote add origin <your-new-repo-url>
+    
 
-Este projeto utiliza o **Gradle** para build.
+2. **Open in Android Studio**:
+    - Launch Android Studio.
+    - Select "Open an Existing Project".
+    - Navigate to the cloned directory and click "OK".
 
-1. Clone o repositório (após inicializar um novo Git, pois o antigo foi removido).
-2. Abra o projeto no **Android Studio**.
-3. Sincronize as dependências via Gradle.
-4. Conecte um dispositivo Android ou utilize um emulador.
-5. Compile e execute o aplicativo.
+3. **Sync Dependencies**:
+    - Android Studio will prompt to sync the Gradle project.
+    - Ensure the `gson-2.2.4.jar` library is present in `app/libs/`.
 
-## Dependências principais
+4. **Configure API & Sensitive Data**:
+    - **Important**: Do not commit API keys or sensitive configurations directly to the codebase.
+    - It is recommended to use `local.properties` or secure environment variable injection methods.
 
-- **Android SDK**
-- **Biblioteca Gson** para manipulação JSON (`app/libs/gson-2.2.4.jar`)
-- **Bibliotecas OCR** (não detalhadas aqui, verificar código para integrações específicas)
-- **Conexão com TCGPlayer API**
+5. **Run the Application**:
+    - Connect your Android device via USB (with Developer Options enabled) or start an Emulator.
+    - Click the "Run" (Green Play) button in Android Studio.
 
-## Observações
+## Project Structure
 
-- O projeto foi limpo do repositório Git anterior.
-- Recomenda-se configurar um novo repositório Git para controle de versão.
-- Variáveis sensíveis e configurações específicas devem ser mantidas em arquivos `.env` (não incluídos).
+- **Camera & OCR**: Handles image capture and text recognition logic.
+- **API Client**: Connects to TCGPlayer to fetch card pricing.
+- **UI/UX**: Manages the visual organization of trade piles and settings.
+- **Tools**: Contains logic for the Life Counter and File Export features.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
